@@ -103,12 +103,12 @@ async function slide_1_data() {
     svg.append("text").attr("x", width/2 + width_margin).attr("y", height_margin).style("font-size", "large")
         .attr("text-anchor", "middle").classed("chart-title", true).text("Jo1 Member Rankings During Produce 101");
     
-    svg.append("text").attr("text-anchor", "end")
+    svg.append("text").attr("text-anchor", "end").style("font-size", "0.8vw")
         .attr("x", - height / 2 + height_margin).attr("y", width_margin)
         .attr("transform", "rotate(-90)")
         .classed("chart-axes", true).text("Ranking");
 
-    svg.append("text").attr("text-anchor", "middle")
+    svg.append("text").attr("text-anchor", "middle").style("font-size", "0.8vw")
         .attr("x", width / 2 + width_margin).attr("y", height - height_margin)
         .classed("chart-axes", true).text("Episodes");
 
@@ -285,12 +285,11 @@ async function slide_2_data(trendlines, annotations) {
     svg.append("text").attr("x", width/2 + width_margin).attr("y", height_margin).style("font-size", "large")
         .attr("text-anchor", "middle").classed("chart-title", true).text("Tweet Engagement Pre Debut");
     
-    svg.append("text").attr("text-anchor", "end")
+    svg.append("text").attr("text-anchor", "end").style("font-size", "0.8vw")
         .attr("x", - height / 2 + height_margin).attr("y", width_margin)
         .attr("transform", "rotate(-90)")
         .classed("chart-axes", true).text("Likes");
-
-    svg.append("text").attr("text-anchor", "middle")
+    svg.append("text").attr("text-anchor", "middle").style("font-size", "0.8vw")
         .attr("x", width / 2 + width_margin).attr("y", height - height_margin)
         .classed("chart-axes", true).text("Month Year");
 
@@ -394,7 +393,7 @@ async function slide_2_data(trendlines, annotations) {
                     .attr("x", function(d) {return width / 2 + 3 * width_margin})
                     .attr("y", function(d) {return height / 2 + 5 * height_margin;})
                     .attr("fill", d.values[0].color)
-                    .style("font-size", "small")
+                    .style("font-size", "0.7vw")
                     .style("opacity", 0);
                 svg.append("text")
                     .text("Least Squares Equation: " + decimalFormat(leastSquaresCoeff[0] * -1) + "x + " + decimalFormat(leastSquaresCoeff[1]))
@@ -402,7 +401,7 @@ async function slide_2_data(trendlines, annotations) {
                     .attr("x", function(d) {return width / 2 + 3 * width_margin})
                     .attr("y", function(d) {return height / 2 + 5.5 * height_margin;})
                     .attr("fill", d.values[0].color)
-                    .style("font-size", "small")
+                    .style("font-size", "0.7vw")
                     .style("opacity", 0);
             })
     }
@@ -507,7 +506,7 @@ async function slide_3_data(trendlines) {
         color: ["#716989"],
         x: xs(new Date(min_date)) + 2 * width_margin,
         y: 2 * height_margin,
-        dx: 10,
+        dx: 0,
         dy: 40,
         type: d3.annotationCalloutRect
         },
@@ -526,7 +525,7 @@ async function slide_3_data(trendlines) {
             color: ["#50808f"],
             x: xs(new Date("6/21/2020")) + 2 * width_margin,
             y: 2 * height_margin,
-            dx: 10,
+            dx: 0,
             dy: 40,
             type: d3.annotationCalloutRect
         },
@@ -545,7 +544,7 @@ async function slide_3_data(trendlines) {
             color: ["#d6c0f8"],
             x: xs(new Date("10/4/2020")) + 2 * width_margin,
             y: 2 * height_margin,
-            dx: 10,
+            dx: 0,
             dy: 40,
             type: d3.annotationCalloutRect
         },
@@ -564,7 +563,7 @@ async function slide_3_data(trendlines) {
             color: ["#1c4651"],
             x: xs(new Date("2/20/2021")) + 2 * width_margin,
             y: 2 * height_margin,
-            dx: 10,
+            dx: 0,
             dy: 40,
             type: d3.annotationCalloutRect
         },
@@ -583,7 +582,7 @@ async function slide_3_data(trendlines) {
             color: ["#2b536c"],
             x: xs(new Date("6/8/2021")) + 2 * width_margin,
             y: 2 * height_margin,
-            dx: 10,
+            dx: 0,
             dy: 40,
             type: d3.annotationCalloutRect
         },
@@ -602,7 +601,7 @@ async function slide_3_data(trendlines) {
             color: ["#888184"],
             x: xs(new Date("10/10/2021")) + 2 * width_margin,
             y: 2 * height_margin,
-            dx: 10,
+            dx: 0,
             dy: 40,
             type: d3.annotationCalloutRect
         },
@@ -621,7 +620,7 @@ async function slide_3_data(trendlines) {
             color: ["#9abcdd"],
             x: xs(new Date("3/22/2022")) + 2 * width_margin,
             y: 2 * height_margin,
-            dx: 10,
+            dx: 0,
             dy: 40,
             type: d3.annotationCalloutRect
         }
@@ -638,17 +637,17 @@ async function slide_3_data(trendlines) {
     svg.append("g").attr("transform", "translate("+2 * width_margin+","+(height-2*height_margin)+")")
         .call(d3.axisBottom(xs).ticks(d3.timeMonth.every(1)).tickFormat(d3.timeFormat("%b%y")))
 
-        svg.selectAll(".tick").style("font-size", "0.5vw")
+    svg.selectAll(".tick").style("font-size", "0.5vw")
 
-    svg.append("text").attr("x", width/2 + width_margin).attr("y", height_margin).style("font-size", "medium")
+    svg.append("text").attr("x", width/2 + width_margin).attr("y", height_margin).style("font-size", "large")
         .attr("text-anchor", "middle").classed("chart-title", true).text("Tweet Engagement Post Debut");
     
-    svg.append("text").attr("text-anchor", "end")
+    svg.append("text").attr("text-anchor", "end").style("font-size", "0.8vw")
         .attr("x", - height / 2 + height_margin).attr("y", width_margin)
         .attr("transform", "rotate(-90)")
         .classed("chart-axes", true).text("Likes");
 
-    svg.append("text").attr("text-anchor", "middle")
+    svg.append("text").attr("text-anchor", "middle").style("font-size", "0.8vw")
         .attr("x", width / 2 + width_margin).attr("y", height - height_margin)
         .classed("chart-axes", true).text("Month Year");
 
@@ -726,7 +725,7 @@ async function slide_3_data(trendlines) {
                     .attr("x", function(d) {return 4.3 * width_margin})
                     .attr("y", function(d) {return height / 2 - 4.5 * height_margin;})
                     .attr("fill", d.values[0].color)
-                    .style("font-size", "small")
+                    .style("font-size", "0.7vw")
                     .style("opacity", 0);
 
                 svg.append("text")
@@ -735,7 +734,7 @@ async function slide_3_data(trendlines) {
                     .attr("x", function(d) {return 4.3 * width_margin})
                     .attr("y", function(d) {return height / 2 - 4 * height_margin;})
                     .attr("fill", d.values[0].color)
-                    .style("font-size", "small")
+                    .style("font-size", "0.7vw")
                     .style("opacity", 0);
             })
         }
