@@ -1,0 +1,33 @@
+<html>
+    <body>
+        <script src='https://d3js.org/d3.v5.min.js'></script>
+        <script src='https://github.com/susielu/d3-annotation/blob/master/d3-annotation.js'></script>
+        <script src='script.js'></script>
+        <link rel="stylesheet" href="style.css">
+        <body onload='slide_1_init()'>
+
+        <div class="page">
+
+            <div class="column-left">
+               <h1>Produce 101 Japan</h1>
+               <img src="img/pdj_logo.jpeg" />
+               <p class="info" id="1">"Produce 101 Japan is a 2019 Japanese reality competition show and a spin-off of the South Korean television series Produce 101. The show followed 101 trainees with the intention of producing an 11-member boy band. The members, group name, and concepts were selected by viewers, referred to as "national producers".</p>
+               <p class="info" id="2">"The series was first announced in April 2019, premiered on September 25, 2019, and ran for 12 episodes with the last episode airing on December 11, 2019.</p>
+               <p class="info" id="3">"The final top 11 members debuted as the permanent group, JO1."</p>
+               <div style="margin-top: 5%" class="nav">
+                <a id="link" href="https://en.wikipedia.org/wiki/Produce_101_Japan_(season_1)">- Wikipedia</a>
+                <button id="previous" onclick=prev1() style="visibility: hidden"><< Previous</button>
+                <button id="next" onclick=next1()>Next >></button>
+               </div>
+            </div>
+              
+            <div class="svg-container" id="container">
+                <svg class="svg-content-responsive" id="chart"></svg>     
+            </div> 
+
+            <div id="tooltip"></div>
+
+        </div>
+                
+    </body>
+</html>

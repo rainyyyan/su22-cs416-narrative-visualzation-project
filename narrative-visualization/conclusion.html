@@ -1,0 +1,45 @@
+<html>
+    <body>
+        <script src='https://d3js.org/d3.v5.min.js'></script>
+        <script src='https://github.com/susielu/d3-annotation/blob/master/d3-annotation.js'></script>
+        <script src='script.js'></script>
+        <link rel="stylesheet" href="style.css">
+        <body>
+
+        <div class="page">
+
+            <div class="column-left">
+               <h1 style="margin-bottom:10%">Conclusions</h1>
+               <p class="info">Through the various plots shown in the previous pages, one can observe that, though the group's twitter engagement decreased slightly during their period of inactivity after debut, the group's popularity is now increasing, albeit slowly, as seen through the slope of the trendline for tweet engagement after debut (figure 1).</p>
+               <p class="info">It is also interesting to compare engagement of tweets by individual members, where the amount of interactions the members get on their individual posts now differs from when they first debuted (figure 2). <u>Figure 3 ranks the members by the y-intercepts of the equations of their trendlines from the engagement of their tweets after debut.</u></p> 
+               <p class="info">Of course, since the trendlines were only based the number of likes of each tweet, a more comprehensive ranking could be made if the number of retweets and comments on each tweet were taken into consideration as well.</p>
+               <p class="info">It would also have been more informative if data points representing tweets with multiple members were displayed with multiple colors, as well as being weighted differently for each member during trendline calculations.</p>
+               <h2 style="margin-top:10%; margin-bottom:0%; padding-bottom:1%">This is the end of this narrative visualization,</h2>
+               <h2 style="margin-top:0%; padding-top:0%; margin-bottom:7%"> thank you for reading!</h2>
+               <div style="margin-top: 5%" class="nav">
+                <button id="previous" onclick=prev4()><< Previous</button>
+                <button id="next" onclick=next4()>Back to Page 1 >></button>
+               </div>
+            </div>
+
+            <div class="conclusion">
+                <div style="display:block; flex: 30%;">
+                    <figure>
+                        <img id="f1" src="img/figure1.jpeg"></img>
+                        <figcaption>Figure 1: Least squares equation for trendline for Group tweets, before and after debut</figcaption>
+                    </figure>
+                    <figure>
+                        <img id="f2" src="img/figure2.png"></img>
+                        <figcaption>Figure 2: Member popularity rankings at time of debut</figcaption>
+                    </figure>
+                </div>
+                <figure>
+                    <img id="f3" src="img/figure3.jpeg"></img>
+                    <figcaption>Figure 3: Comparision of least sqaures equations of trendline for member tweets after debut</figcaption>
+                </figure>
+            </div>
+
+        </div>
+                
+    </body>
+</html>

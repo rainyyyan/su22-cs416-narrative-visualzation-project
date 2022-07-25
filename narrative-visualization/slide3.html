@@ -1,0 +1,48 @@
+<html>
+    <body>
+        <script src='https://d3js.org/d3.v5.min.js'></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-annotation/2.5.1/d3-annotation.js" integrity="sha512-OYIn9Tx6AQ/OfeUow7zLScBXV38CqumwIpue7WoR7RczlHJUVU+GqJmQ2Zmq/NrRsMhCN4EDGM4Wp97iTo34Jw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src='script.js'></script>
+        <link rel="stylesheet" href="style.css">
+        <body onload='slide_3_init()'>
+
+        <div class="page">
+
+            <div class="column-left" id="text">
+                <h1>JO1 After Debut</h1>
+                <img src="img/jo1_logo.png" />
+                <p class="info" id="1">The plot on the right presents all tweets by the official twitter account after the group's debut, March 4, 2020, up until when the account's twitter data was retrieved on July 10, 2022.</p>
+                <p class="info" id="2">The plot also shows all eps and albums released by the group and the period during which the release was promoted. One can see that the group had a new release every 3-5 months.</p>
+                <p class="info" id="3">Of all present releases, only <i>The Star</i> and <i>Kizuna</i> are studio albums, with the rest of the releases being EPs that contained 5-7 songs each.</p>
+
+                <div id="dropdown" class="dropdown-content">
+                    <button class="dropbtn" id="orange" onclick=filterMember(this.id)>Group</button>
+                    <button class="dropbtn" id="red" onclick=filterMember(this.id)>Mamehara Issei</button>
+                    <button class="dropbtn"id="darkblue" onclick=filterMember(this.id)>Kawashiri Ren</button>
+                    <button class="dropbtn" id="hotpink" onclick=filterMember(this.id)>Kawanishi Takumi</button>
+                    <button class="dropbtn" id="gold" onclick=filterMember(this.id)>Ohira Shosei</button>
+                    <button class="dropbtn" id="gray" onclick=filterMember(this.id)>Tsurubo Shion</button>
+                    <button class="dropbtn" id="silver" onclick=filterMember(this.id)>Shiroiwa Ruki</button>
+                    <button class="dropbtn" id="brown" onclick=filterMember(this.id)>Sato Keigo</button>
+                    <button class="dropbtn" id="purple" onclick=filterMember(this.id)>Kimata Syoya</button>
+                    <button class="dropbtn" id="deepskyblue" onclick=filterMember(this.id)>Kono Junki</button>
+                    <button class="dropbtn" id="black" onclick=filterMember(this.id)>Kinjo Sukai</button>
+                    <button class="dropbtn" id="green" onclick=filterMember(this.id)>Yonashiro Sho</button>
+                </div>
+
+                <div class="nav" style="margin-top: 5%" >
+                    <button id="previous" onclick=prev3()><< Previous</button>
+                    <button id="next" onclick=next3()>Next >></button>
+                </div>
+            </div>
+              
+            <div class="svg-container">
+                <svg class="svg-content-responsive" id="chart"></svg>     
+            </div> 
+
+            <div id="tooltip"></div>
+
+        </div>
+                
+    </body>
+</html>

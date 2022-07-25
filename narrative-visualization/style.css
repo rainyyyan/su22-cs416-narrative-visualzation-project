@@ -1,0 +1,153 @@
+.page {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 0%;
+  margin: 0%;
+  font-size: 100%;
+}
+
+.dropdown-content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  background-color: #f1f1f1;
+  box-shadow: 0% 1% 2% 0% rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content button {
+  color: black;
+  text-decoration: none;
+  border: none;
+  text-align: center;
+  margin: 0% auto ;
+  left: 0; 
+  right: 0;
+  padding: 2% 1%;
+  font-size: 0.63vw;
+  font-family: serif;
+}
+
+.dropdown-content button:hover {background-color: #ddd}
+
+img {
+  height: 46%;
+}
+
+form {
+  padding: 0%;
+  margin: 0% 2%;
+  height: 100%;
+  width: 100%;
+}
+
+.info {
+  font-size: 1.14vw;
+  text-align: justify;
+  color: whitesmoke;
+}
+
+u {
+  text-decoration: none;
+  border-bottom: 1px solid whitesmoke;
+}
+
+.nav button {
+  padding: 0.5% 1%;
+  margin-left: 5%;
+  font-family: serif;
+  font-size: 0.94vw;
+  color: blue;
+  background-color: whitesmoke;
+  border: none;
+  cursor: pointer;
+}
+
+a#link {
+  font-size: 0.88vw;
+  color: lightgray;
+  font-style: italic;
+  text-align: left;
+  text-decoration: none;
+}
+
+p {
+  font-size: 0.88vw;
+}
+
+h1 {
+  font-size: 2.1vw;
+  color: whitesmoke;
+}
+
+h2 {
+  font-size: 1.6vw;
+  font-weight: 600;
+  color: whitesmoke;
+}
+
+.column-left {
+  flex: 37%;
+  padding: 1% 2%;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  background-color: blue;
+}
+
+.svg-container {
+    flex: 63%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 0%;
+    background-color: whitesmoke;
+}
+
+.svg-content-responsive {
+  height: 95%;
+  width: 95%;
+}
+
+.chart-title {
+  font-family: serif;  
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.chart-axes {
+  font-family: serif;  
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.line {
+  stroke-width: 2;
+  fill: none;
+}
+
+.axis path {
+  stroke: black;
+}
+
+.conclusion {
+  flex: 63%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0%;
+  background-color: whitesmoke;
+}
+
+#f1 {
+  height: 24%;
+}
+
+#f2 {
+  height: 40%;
+}
+
+#f3 {
+  height: 90%;
+}

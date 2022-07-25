@@ -1,0 +1,48 @@
+<html>
+    <body>
+        <script src='https://d3js.org/d3.v5.min.js'></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-annotation/2.5.1/d3-annotation.js" integrity="sha512-OYIn9Tx6AQ/OfeUow7zLScBXV38CqumwIpue7WoR7RczlHJUVU+GqJmQ2Zmq/NrRsMhCN4EDGM4Wp97iTo34Jw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src='script.js'></script>
+        <link rel="stylesheet" href="style.css">
+        <body onload='slide_2_init()'>
+
+        <div class="page">
+
+            <div class="column-left" id="text">
+                <h1>JO1 Pre-Debut</h1>
+                <img src="img/jo1_logo.png" />
+                <p class="info" id="1">After Produce 101 Japan concluded on December 11, 2019, the official twitter account for the final group was revealed to be <a class="info" href="https://twitter.com/official_jo1">@official_jo1</a>.</p>
+                <p class="info" id="2">Following the end of the show, members of the newly-formed group JO1 traveled to South Korea to prepare for their official debut. As a result, the official twitter account had brief periods of inactivity during this time.</p>
+                <p class="info" id="3">On January 29th, 2020, the official Twitter account announced that the group's debut single, titled "Protostar", would be released on March 4, 2020. The twitter account became more active as it began to release teasers for the group's debut.</p>
+                
+                <div id="dropdown" class="dropdown-content">
+                    <button class="dropbtn" id="orange" onclick=filterMember(this.id)>Group</button>
+                    <button class="dropbtn" id="red" onclick=filterMember(this.id)>Mamehara Issei</button>
+                    <button class="dropbtn"id="darkblue" onclick=filterMember(this.id)>Kawashiri Ren</button>
+                    <button class="dropbtn" id="hotpink" onclick=filterMember(this.id)>Kawanishi Takumi</button>
+                    <button class="dropbtn" id="gold" onclick=filterMember(this.id)>Ohira Shosei</button>
+                    <button class="dropbtn" id="gray" onclick=filterMember(this.id)>Tsurubo Shion</button>
+                    <button class="dropbtn" id="silver" onclick=filterMember(this.id)>Shiroiwa Ruki</button>
+                    <button class="dropbtn" id="brown" onclick=filterMember(this.id)>Sato Keigo</button>
+                    <button class="dropbtn" id="purple" onclick=filterMember(this.id)>Kimata Syoya</button>
+                    <button class="dropbtn" id="deepskyblue" onclick=filterMember(this.id)>Kono Junki</button>
+                    <button class="dropbtn" id="black" onclick=filterMember(this.id)>Kinjo Sukai</button>
+                    <button class="dropbtn" id="green" onclick=filterMember(this.id)>Yonashiro Sho</button>
+                </div>
+
+                <div class="nav" style="margin-top: 5%" >
+                    <button id="previous" onclick=prev2()><< Previous</button>
+                    <button id="next" onclick=next2()>Next >></button>
+                </div>
+            </div>
+              
+            <div class="svg-container">
+                <svg class="svg-content-responsive" id="chart"></svg>     
+            </div> 
+
+            <div id="tooltip"></div>
+
+        </div>
+                
+    </body>
+</html>
