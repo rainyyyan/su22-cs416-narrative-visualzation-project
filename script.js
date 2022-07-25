@@ -901,9 +901,17 @@ function responsivefy(svg) {
         d3.selectAll('.trendline')
             .style('opacity', lineOpacity)
             .style("stroke-width", lineStroke)
-        d3.selectAll('.datacircle')
+
+        if (slide2) {
+            d3.selectAll('.datacircle')
             .style('opacity', circleOpacity)
             .attr("r", 2)
+        } else {
+            d3.selectAll('.datacircle')
+            .style('opacity', circleOpacity)
+            .attr("r", 1.5)
+        }
+        
         d3.selectAll('.lsqtext')
             .style('opacity', 0)
     }
