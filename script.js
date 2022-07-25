@@ -74,7 +74,7 @@ async function slide_1_data() {
         })
         .attr("cx", function (d) { return xs(+d.episode); } )
         .attr("cy", function (d) { return ys(+d.ranking); } )
-        .attr("r", 5)
+        .attr("r", 3)
         .attr("fill", function(d) { return d.color; })
         .on("mouseover", function(d) {
             if (mouse1) {
@@ -115,14 +115,14 @@ async function slide_1_data() {
         .data(sumstat)
         .enter()
         .append("text")
-        .attr("x", width * 5 / 8)
+        .attr("x", width * 3 / 4)
         .attr("y", function(d, i) {
-            return (i * 30) + (height - height_margin) / 2;
+            return (i * 20) + (height - height_margin) / 2;
         })
         .style("fill", function(d) {
             return d.values[0].color;
         })
-        .style("font-size", "large")
+        .style("font-size", "medium")
         .attr("class", function (d) {
             return "text_" + d.values[0].color;
         })
@@ -646,7 +646,7 @@ async function slide_3_data(trendlines) {
         })
         .attr("cx", function(d) {return xs(new Date(d.UTC));})
         .attr("cy", function(d) {return ys(+d.Favorites);})
-        .attr("r", 2).attr("fill", function(d){ return d.color})
+        .attr("r", 1.5).attr("fill", function(d){ return d.color})
         .on("mouseover", function(d) {
             if (!trendlines) {
                 datapoint_tooltip
@@ -713,6 +713,7 @@ async function slide_3_data(trendlines) {
                     .attr("x", function(d) {return 4.3 * width_margin})
                     .attr("y", function(d) {return height / 2 - 4 * height_margin;})
                     .attr("fill", d.values[0].color)
+                    .style("font-size", "medium")
                     .style("opacity", 0);
 
                 svg.append("text")
@@ -721,6 +722,7 @@ async function slide_3_data(trendlines) {
                     .attr("x", function(d) {return 4.3 * width_margin})
                     .attr("y", function(d) {return height / 2 - 3.5 * height_margin;})
                     .attr("fill", d.values[0].color)
+                    .style("font-size", "medium")
                     .style("opacity", 0);
             })
         }
