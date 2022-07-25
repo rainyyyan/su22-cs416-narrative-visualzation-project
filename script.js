@@ -98,7 +98,7 @@ async function slide_1_data() {
     svg.append("g").attr("transform", "translate("+2 * width_margin+","+(height-2*height_margin)+")")
         .call(d3.axisBottom(xs).ticks(12))
 
-    svg.append("text").attr("x", width/2 + width_margin).attr("y", height_margin).style("font-size", "medium")
+    svg.append("text").attr("x", width/2 + width_margin).attr("y", height_margin).style("font-size", "large")
         .attr("text-anchor", "middle").classed("chart-title", true).text("Jo1 Member Rankings During Produce 101");
     
     svg.append("text").attr("text-anchor", "end")
@@ -115,7 +115,7 @@ async function slide_1_data() {
         .data(sumstat)
         .enter()
         .append("text")
-        .attr("x", width * 7 / 16)
+        .attr("x", width * 9 / 16)
         .attr("y", function(d, i) {
             return (i * 20) + (height - height_margin) / 2;
         })
@@ -270,6 +270,7 @@ async function slide_2_data(trendlines, annotations) {
         const makeAnnotations = d3.annotation().annotations(annotations)
         svg.append("g").classed("annotations", true).call(makeAnnotations)
 
+        svg.selectAll(".annotation-note-title").style("font-size", "small")
         svg.selectAll(".annotation-note-label").style("font-size", "small")
     }
 
@@ -277,10 +278,10 @@ async function slide_2_data(trendlines, annotations) {
     svg.append("g").attr("transform", "translate("+2 * width_margin+","+(height-2*height_margin)+")")
         .call(d3.axisBottom(xs).ticks(d3.timeMonth.every(1)).tickFormat(d3.timeFormat("%b%y")))
 
-    svg.append("text").attr("x", width/2 + width_margin).attr("y", height_margin)
+    svg.append("text").attr("x", width/2 + width_margin).attr("y", height_margin).style("font-size", "large")
         .attr("text-anchor", "middle").classed("chart-title", true).text("Tweet Engagement Pre Debut");
     
-    svg.append("text").attr("text-anchor", "end").style("font-size", "medium")
+    svg.append("text").attr("text-anchor", "end")
         .attr("x", - height / 2 + height_margin).attr("y", width_margin)
         .attr("transform", "rotate(-90)")
         .classed("chart-axes", true).text("Likes");
@@ -502,7 +503,7 @@ async function slide_3_data(trendlines) {
         color: ["#716989"],
         x: xs(new Date(min_date)) + 2 * width_margin,
         y: 2 * height_margin,
-        dx: 20,
+        dx: 10,
         dy: 50,
         type: d3.annotationCalloutRect
         },
@@ -521,8 +522,8 @@ async function slide_3_data(trendlines) {
             color: ["#50808f"],
             x: xs(new Date("6/21/2020")) + 2 * width_margin,
             y: 2 * height_margin,
-            dx: 20,
-            dy: 50,
+            dx: 10,
+            dy: 40,
             type: d3.annotationCalloutRect
         },
         {
@@ -540,8 +541,8 @@ async function slide_3_data(trendlines) {
             color: ["#d6c0f8"],
             x: xs(new Date("10/4/2020")) + 2 * width_margin,
             y: 2 * height_margin,
-            dx: 20,
-            dy: 50,
+            dx: 10,
+            dy: 40,
             type: d3.annotationCalloutRect
         },
         {
@@ -559,8 +560,8 @@ async function slide_3_data(trendlines) {
             color: ["#1c4651"],
             x: xs(new Date("2/20/2021")) + 2 * width_margin,
             y: 2 * height_margin,
-            dx: 20,
-            dy: 50,
+            dx: 10,
+            dy: 40,
             type: d3.annotationCalloutRect
         },
         {
@@ -578,8 +579,8 @@ async function slide_3_data(trendlines) {
             color: ["#2b536c"],
             x: xs(new Date("6/8/2021")) + 2 * width_margin,
             y: 2 * height_margin,
-            dx: 20,
-            dy: 50,
+            dx: 10,
+            dy: 40,
             type: d3.annotationCalloutRect
         },
         {
@@ -597,8 +598,8 @@ async function slide_3_data(trendlines) {
             color: ["#888184"],
             x: xs(new Date("10/10/2021")) + 2 * width_margin,
             y: 2 * height_margin,
-            dx: 20,
-            dy: 50,
+            dx: 10,
+            dy: 40,
             type: d3.annotationCalloutRect
         },
         {
@@ -616,8 +617,8 @@ async function slide_3_data(trendlines) {
             color: ["#9abcdd"],
             x: xs(new Date("3/22/2022")) + 2 * width_margin,
             y: 2 * height_margin,
-            dx: 20,
-            dy: 50,
+            dx: 10,
+            dy: 40,
             type: d3.annotationCalloutRect
         }
     ]
@@ -627,6 +628,7 @@ async function slide_3_data(trendlines) {
 
     svg.selectAll(".subject").attr("fill-opacity", 0)
     svg.selectAll(".annotation-note-label").style("font-size", "small")
+    svg.selectAll(".annotation-note-title").style("font-size", "small")
 
     svg.append("g").attr("transform", "translate("+2 * width_margin+","+ 2*height_margin+")").call(d3.axisLeft(ys))
     svg.append("g").attr("transform", "translate("+2 * width_margin+","+(height-2*height_margin)+")")
