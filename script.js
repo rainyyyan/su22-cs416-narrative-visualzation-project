@@ -33,7 +33,7 @@ async function slide_1_data() {
         .attr("class", "tooltip")
         .style("background-color", "white")
         .style("border", "solid")
-        .style("border-width", "2px")
+        .style("border-width", "1px")
         .style("border-radius", "5px")
         .style("padding", "5px")
 
@@ -207,7 +207,7 @@ async function slide_2_data(trendlines, annotations) {
         .attr("class", "tooltip")
         .style("background-color", "white")
         .style("border", "solid")
-        .style("border-width", "2px")
+        .style("border-width", "1px")
         .style("border-radius", "5px")
         .style("padding", "5px")
 
@@ -244,7 +244,7 @@ async function slide_2_data(trendlines, annotations) {
                 color: ["#f4b83c"],
                 x: xs(new Date(debut.UTC))+ 2 * width_margin,
                 y: ys(debut.Favorites)+2 * height_margin,
-                dy: -50,
+                dy: -20,
                 dx: 50,
                 type: d3.annotationCalloutCircle
             },
@@ -264,7 +264,7 @@ async function slide_2_data(trendlines, annotations) {
                 x: xs(new Date("12/24/2019")) + 2 * width_margin,
                 y: ys(27000) + 2 * height_margin,
                 dy: 25,
-                dx: 60,
+                dx: 20,
                 type: d3.annotationCalloutRect
             }
         ]
@@ -483,7 +483,7 @@ async function slide_3_data(trendlines) {
         .attr("class", "tooltip")
         .style("background-color", "white")
         .style("border", "solid")
-        .style("border-width", "2px")
+        .style("border-width", "1px")
         .style("border-radius", "5px")
         .style("padding", "5px")
 
@@ -499,16 +499,16 @@ async function slide_3_data(trendlines) {
             padding: 10   // More = text lower
             
         },
-        subject: {
-            height: height - 4 * height_margin,
-            width: xs(new Date("6/21/2020")) - xs(new Date(min_date))
-        },
-        color: ["#716989"],
-        x: xs(new Date(min_date)) + 2 * width_margin,
-        y: 2 * height_margin,
-        dx: 0,
-        dy: 40,
-        type: d3.annotationCalloutRect
+            subject: {
+                height: height - 4 * height_margin,
+                width: xs(new Date("6/21/2020")) - xs(new Date(min_date))
+            },
+            color: ["#716989"],
+            x: xs(new Date(min_date)) + 2 * width_margin,
+            y: 2 * height_margin,
+            dx: 5,
+            dy: 40,
+            type: d3.annotationCalloutRect
         },
         {
             note: {
@@ -525,7 +525,7 @@ async function slide_3_data(trendlines) {
             color: ["#50808f"],
             x: xs(new Date("6/21/2020")) + 2 * width_margin,
             y: 2 * height_margin,
-            dx: 0,
+            dx: 5,
             dy: 40,
             type: d3.annotationCalloutRect
         },
@@ -544,7 +544,7 @@ async function slide_3_data(trendlines) {
             color: ["#d6c0f8"],
             x: xs(new Date("10/4/2020")) + 2 * width_margin,
             y: 2 * height_margin,
-            dx: 0,
+            dx: 5,
             dy: 40,
             type: d3.annotationCalloutRect
         },
@@ -563,7 +563,7 @@ async function slide_3_data(trendlines) {
             color: ["#1c4651"],
             x: xs(new Date("2/20/2021")) + 2 * width_margin,
             y: 2 * height_margin,
-            dx: 0,
+            dx: 5,
             dy: 40,
             type: d3.annotationCalloutRect
         },
@@ -582,7 +582,7 @@ async function slide_3_data(trendlines) {
             color: ["#2b536c"],
             x: xs(new Date("6/8/2021")) + 2 * width_margin,
             y: 2 * height_margin,
-            dx: 0,
+            dx: 5,
             dy: 40,
             type: d3.annotationCalloutRect
         },
@@ -601,7 +601,7 @@ async function slide_3_data(trendlines) {
             color: ["#888184"],
             x: xs(new Date("10/10/2021")) + 2 * width_margin,
             y: 2 * height_margin,
-            dx: 0,
+            dx: 5,
             dy: 40,
             type: d3.annotationCalloutRect
         },
@@ -620,7 +620,7 @@ async function slide_3_data(trendlines) {
             color: ["#9abcdd"],
             x: xs(new Date("3/22/2022")) + 2 * width_margin,
             y: 2 * height_margin,
-            dx: 0,
+            dx: 5,
             dy: 40,
             type: d3.annotationCalloutRect
         }
