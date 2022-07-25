@@ -98,6 +98,8 @@ async function slide_1_data() {
     svg.append("g").attr("transform", "translate("+2 * width_margin+","+(height-2*height_margin)+")")
         .call(d3.axisBottom(xs).ticks(12))
 
+    svg.selectAll(".tick").style("font-size", "0.5vw")
+
     svg.append("text").attr("x", width/2 + width_margin).attr("y", height_margin).style("font-size", "large")
         .attr("text-anchor", "middle").classed("chart-title", true).text("Jo1 Member Rankings During Produce 101");
     
@@ -271,12 +273,14 @@ async function slide_2_data(trendlines, annotations) {
         svg.append("g").classed("annotations", true).call(makeAnnotations)
 
         svg.selectAll(".annotation-note-title").style("font-size", "small")
-        svg.selectAll(".annotation-note-label").style("font-size", "small")
+        svg.selectAll(".annotation-note-label").style("font-size", "0.7vw")
     }
 
     svg.append("g").attr("transform", "translate("+2 * width_margin+","+ 2*height_margin+")").call(d3.axisLeft(ys))
     svg.append("g").attr("transform", "translate("+2 * width_margin+","+(height-2*height_margin)+")")
         .call(d3.axisBottom(xs).ticks(d3.timeMonth.every(1)).tickFormat(d3.timeFormat("%b%y")))
+
+    svg.selectAll(".tick").style("font-size", "0.5vw")
 
     svg.append("text").attr("x", width/2 + width_margin).attr("y", height_margin).style("font-size", "large")
         .attr("text-anchor", "middle").classed("chart-title", true).text("Tweet Engagement Pre Debut");
@@ -504,7 +508,7 @@ async function slide_3_data(trendlines) {
         x: xs(new Date(min_date)) + 2 * width_margin,
         y: 2 * height_margin,
         dx: 10,
-        dy: 50,
+        dy: 40,
         type: d3.annotationCalloutRect
         },
         {
@@ -627,12 +631,14 @@ async function slide_3_data(trendlines) {
     svg.append("g").classed("annotations", true).call(makeAnnotations)
 
     svg.selectAll(".subject").attr("fill-opacity", 0)
-    svg.selectAll(".annotation-note-label").style("font-size", "small")
+    svg.selectAll(".annotation-note-label").style("font-size", "0.7vw")
     svg.selectAll(".annotation-note-title").style("font-size", "small")
 
     svg.append("g").attr("transform", "translate("+2 * width_margin+","+ 2*height_margin+")").call(d3.axisLeft(ys))
     svg.append("g").attr("transform", "translate("+2 * width_margin+","+(height-2*height_margin)+")")
         .call(d3.axisBottom(xs).ticks(d3.timeMonth.every(1)).tickFormat(d3.timeFormat("%b%y")))
+
+        svg.selectAll(".tick").style("font-size", "0.5vw")
 
     svg.append("text").attr("x", width/2 + width_margin).attr("y", height_margin).style("font-size", "medium")
         .attr("text-anchor", "middle").classed("chart-title", true).text("Tweet Engagement Post Debut");
@@ -718,7 +724,7 @@ async function slide_3_data(trendlines) {
                 svg.append("text").text(d.key)
                     .attr("class", function() {return "lsqtext text_" + d.values[0].color})
                     .attr("x", function(d) {return 4.3 * width_margin})
-                    .attr("y", function(d) {return height / 2 - 4 * height_margin;})
+                    .attr("y", function(d) {return height / 2 - 4.5 * height_margin;})
                     .attr("fill", d.values[0].color)
                     .style("font-size", "small")
                     .style("opacity", 0);
@@ -727,7 +733,7 @@ async function slide_3_data(trendlines) {
                     .text("Least Squares Equation: " + decimalFormat(leastSquaresCoeff[0] * -1) + "x + " + decimalFormat(leastSquaresCoeff[1]))
                     .attr("class", function() {return "lsqtext text_" + d.values[0].color})
                     .attr("x", function(d) {return 4.3 * width_margin})
-                    .attr("y", function(d) {return height / 2 - 3.5 * height_margin;})
+                    .attr("y", function(d) {return height / 2 - 4 * height_margin;})
                     .attr("fill", d.values[0].color)
                     .style("font-size", "small")
                     .style("opacity", 0);
@@ -817,7 +823,7 @@ function mouseOver(color) {
         .style('opacity', circleOpacityOnLineHover);
     d3.selectAll('.circle_'+color)
         .style("opacity", circleOpacity)
-        .attr("r", 6)
+        .attr("r", 5)
     d3.selectAll('.line_' + color)
         .style('opacity', lineOpacityHover)
         .style("stroke-width", lineStrokeHover)
@@ -834,7 +840,7 @@ function mouseOut() {
         .style("stroke-width", lineStroke);
     d3.selectAll('.circle')
         .style('opacity', circleOpacity)
-        .attr("r", 5)
+        .attr("r", 3)
     d3.select('.legend').selectAll('text').style("font-weight", "normal")
 }
 
