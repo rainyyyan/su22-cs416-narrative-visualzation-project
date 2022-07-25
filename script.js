@@ -653,6 +653,18 @@ async function slide_3_data(trendlines) {
                 .style("right", (width - 2 * width_margin - d3.mouse(this)[0]) + "px")
                 .style("top", (d3.mouse(this)[1]) + 3 * height_margin + "px")
             d3.select(this).style("cursor", "pointer");
+
+            if (!trendlines) {    
+
+                var circleOpacity = '0.85';
+                var circleOpacityOnLineHover = "0.25"
+
+                d3.selectAll('.datacircle')
+                    .style('opacity', circleOpacityOnLineHover);
+                d3.selectAll('.circle_' + d.color)
+                    .style("opacity", circleOpacity)
+                    .attr("r", 2)
+            }
             
         })
         .on("mouseleave", function(d) {
@@ -661,6 +673,12 @@ async function slide_3_data(trendlines) {
                 d3.select(this)
                     .style("stroke", "none")
                     .style("opacity", 0.8)
+                
+                var circleOpacity = '0.85';
+
+                d3.selectAll('.datacircle')
+                    .style('opacity', circleOpacity)
+                    .attr("r", 1.5)
             }
         })
 
