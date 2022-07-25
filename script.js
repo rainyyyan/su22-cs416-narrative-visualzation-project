@@ -98,7 +98,7 @@ async function slide_1_data() {
     svg.append("g").attr("transform", "translate("+2 * width_margin+","+(height-2*height_margin)+")")
         .call(d3.axisBottom(xs).ticks(12))
 
-    svg.append("text").attr("x", width/2 + width_margin).attr("y", height_margin)
+    svg.append("text").attr("x", width/2 + width_margin).attr("y", height_margin).style("font-size", "medium")
         .attr("text-anchor", "middle").classed("chart-title", true).text("Jo1 Member Rankings During Produce 101");
     
     svg.append("text").attr("text-anchor", "end")
@@ -115,14 +115,14 @@ async function slide_1_data() {
         .data(sumstat)
         .enter()
         .append("text")
-        .attr("x", width * 3 / 4)
+        .attr("x", width * 7 / 16)
         .attr("y", function(d, i) {
             return (i * 20) + (height - height_margin) / 2;
         })
         .style("fill", function(d) {
             return d.values[0].color;
         })
-        .style("font-size", "medium")
+        .style("font-size", "small")
         .attr("class", function (d) {
             return "text_" + d.values[0].color;
         })
@@ -269,6 +269,8 @@ async function slide_2_data(trendlines, annotations) {
     
         const makeAnnotations = d3.annotation().annotations(annotations)
         svg.append("g").classed("annotations", true).call(makeAnnotations)
+
+        svg.selectAll(".annotation-note-label").style("font-size", "small")
     }
 
     svg.append("g").attr("transform", "translate("+2 * width_margin+","+ 2*height_margin+")").call(d3.axisLeft(ys))
@@ -278,7 +280,7 @@ async function slide_2_data(trendlines, annotations) {
     svg.append("text").attr("x", width/2 + width_margin).attr("y", height_margin)
         .attr("text-anchor", "middle").classed("chart-title", true).text("Tweet Engagement Pre Debut");
     
-    svg.append("text").attr("text-anchor", "end")
+    svg.append("text").attr("text-anchor", "end").style("font-size", "medium")
         .attr("x", - height / 2 + height_margin).attr("y", width_margin)
         .attr("transform", "rotate(-90)")
         .classed("chart-axes", true).text("Likes");
@@ -387,6 +389,7 @@ async function slide_2_data(trendlines, annotations) {
                     .attr("x", function(d) {return width / 2 + 3 * width_margin})
                     .attr("y", function(d) {return height / 2 + 5 * height_margin;})
                     .attr("fill", d.values[0].color)
+                    .style("font-size", "small")
                     .style("opacity", 0);
                 svg.append("text")
                     .text("Least Squares Equation: " + decimalFormat(leastSquaresCoeff[0] * -1) + "x + " + decimalFormat(leastSquaresCoeff[1]))
@@ -394,6 +397,7 @@ async function slide_2_data(trendlines, annotations) {
                     .attr("x", function(d) {return width / 2 + 3 * width_margin})
                     .attr("y", function(d) {return height / 2 + 5.5 * height_margin;})
                     .attr("fill", d.values[0].color)
+                    .style("font-size", "small")
                     .style("opacity", 0);
             })
     }
@@ -622,12 +626,13 @@ async function slide_3_data(trendlines) {
     svg.append("g").classed("annotations", true).call(makeAnnotations)
 
     svg.selectAll(".subject").attr("fill-opacity", 0)
+    svg.selectAll(".annotation-note-label").style("font-size", "small")
 
     svg.append("g").attr("transform", "translate("+2 * width_margin+","+ 2*height_margin+")").call(d3.axisLeft(ys))
     svg.append("g").attr("transform", "translate("+2 * width_margin+","+(height-2*height_margin)+")")
         .call(d3.axisBottom(xs).ticks(d3.timeMonth.every(1)).tickFormat(d3.timeFormat("%b%y")))
 
-    svg.append("text").attr("x", width/2 + width_margin).attr("y", height_margin)
+    svg.append("text").attr("x", width/2 + width_margin).attr("y", height_margin).style("font-size", "medium")
         .attr("text-anchor", "middle").classed("chart-title", true).text("Tweet Engagement Post Debut");
     
     svg.append("text").attr("text-anchor", "end")
@@ -713,7 +718,7 @@ async function slide_3_data(trendlines) {
                     .attr("x", function(d) {return 4.3 * width_margin})
                     .attr("y", function(d) {return height / 2 - 4 * height_margin;})
                     .attr("fill", d.values[0].color)
-                    .style("font-size", "medium")
+                    .style("font-size", "small")
                     .style("opacity", 0);
 
                 svg.append("text")
@@ -722,7 +727,7 @@ async function slide_3_data(trendlines) {
                     .attr("x", function(d) {return 4.3 * width_margin})
                     .attr("y", function(d) {return height / 2 - 3.5 * height_margin;})
                     .attr("fill", d.values[0].color)
-                    .style("font-size", "medium")
+                    .style("font-size", "small")
                     .style("opacity", 0);
             })
         }
