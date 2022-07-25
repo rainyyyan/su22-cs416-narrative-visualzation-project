@@ -302,48 +302,35 @@ async function slide_2_data(trendlines, annotations) {
         .attr("cy", function(d) {return ys(+d.Favorites);})
         .attr("r", 2).attr("fill", function(d){ return d.color})
         .on("mouseover", function(d) {
+        
             datapoint_tooltip
                 .style("opacity", 1)
                 .html("<p>Posted by: " + d.member + "</p><p>Likes: " + d.Favorites + ", Retweets: " + d.Retweets + "</p><p>Date: " + new Date(d.UTC).toLocaleString('en-US',{timeZone: 'JST'}) + " JST</p>")
                 .style("right", (width - 2 * width_margin - d3.mouse(this)[0]) + "px")
                 .style("top", (d3.mouse(this)[1]) + 3 * height_margin + "px")
             d3.select(this).style("cursor", "pointer");
-
-            if (!trendlines) {
-                var lineOpacityHover = "1";
-                var otherLinesOpacityHover = "0.1";
-                var lineStrokeHover = "2.5px";
+            
+            if (!trendlines) {    
 
                 var circleOpacity = '0.85';
                 var circleOpacityOnLineHover = "0.25"
 
-                d3.selectAll('.trendline')
-                    .style('opacity', otherLinesOpacityHover);
                 d3.selectAll('.datacircle')
                     .style('opacity', circleOpacityOnLineHover);
                 d3.selectAll('.circle_' + d.color)
                     .style("opacity", circleOpacity)
                     .attr("r", 3)
-                d3.select('.line_' + d.color)
-                    .style('opacity', lineOpacityHover)
-                    .style("stroke-width", lineStrokeHover)
             }
         })
         .on("mouseleave", function(d) {
-            datapoint_tooltip
-                .style("opacity", 0)
-            d3.select(this)
-                .style("stroke", "none")
-                .style("opacity", 0.8)
-            
+            datapoint_tooltip.style("opacity", 0)
+
             if (!trendlines) {
-                var lineOpacity = "0.85";
-                var lineStroke = "1.5px";
+
+                d3.select(this).style("stroke", "none").style("opacity", 0.8)
+
                 var circleOpacity = '0.85';
 
-                d3.selectAll('.trendline')
-                    .style('opacity', lineOpacity)
-                    .style("stroke-width", lineStroke)
                 d3.selectAll('.datacircle')
                     .style('opacity', circleOpacity)
                     .attr("r", 2)
@@ -660,23 +647,20 @@ async function slide_3_data(trendlines) {
         .attr("cy", function(d) {return ys(+d.Favorites);})
         .attr("r", 1.5).attr("fill", function(d){ return d.color})
         .on("mouseover", function(d) {
-            if (!trendlines) {
-                datapoint_tooltip
+            datapoint_tooltip
                 .style("opacity", 1)
                 .html("<p>Posted by: " + d.member + "</p><p>Likes: " + d.Favorites + ", Retweets: " + d.Retweets + "</p><p>Date: " + new Date(d.UTC).toLocaleString('en-US',{timeZone: 'JST'}) + " JST</p>")
                 .style("right", (width - 2 * width_margin - d3.mouse(this)[0]) + "px")
                 .style("top", (d3.mouse(this)[1]) + 3 * height_margin + "px")
             d3.select(this).style("cursor", "pointer");
-            }
             
         })
         .on("mouseleave", function(d) {
+            datapoint_tooltip.style("opacity", 0)
             if (!trendlines) {
-                datapoint_tooltip
-                .style("opacity", 0)
-            d3.select(this)
-                .style("stroke", "none")
-                .style("opacity", 0.8)
+                d3.select(this)
+                    .style("stroke", "none")
+                    .style("opacity", 0.8)
             }
         })
 
